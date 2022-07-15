@@ -11,7 +11,7 @@ const DeleteLogin = () => {
     const [filter, setFilter] = useState(""); //datos filtrado de los post
     const formRef = React.useRef();
     useEffect(() => {
-    fetch('http://localhost:3030/login')
+    fetch('https://apimercurio.herokuapp.com/login')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
@@ -23,7 +23,7 @@ const DeleteLogin = () => {
     
     /*${parseInt(values.id)}*/
     
-    fetch(`http://localhost:3030/login/${id}`,{
+    fetch(`https://apimercurio.herokuapp.com/login/${id}`,{
         method:"DELETE",
         headers:{
             "Accept":"application/json",

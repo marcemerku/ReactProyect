@@ -11,7 +11,7 @@ const Delete = () => {
     const [filter, setFilter] = useState(""); //datos filtrado de los post
     const formRef = React.useRef();
     useEffect(() => {
-    fetch('http://localhost:3030/')
+    fetch('https://apimercurio.herokuapp.com/')
       .then((res) => res.json())
       .then((data) => setData(data));
     }, []);
@@ -23,7 +23,7 @@ const Delete = () => {
     
     /*${parseInt(values.id)}*/
     
-    fetch(`http://localhost:3030/edit/${id}`,{
+    fetch(`https://apimercurio.herokuapp.com/edit/${id}`,{
         method:"DELETE",
         headers:{
             "Accept":"application/json",

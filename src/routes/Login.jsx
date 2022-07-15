@@ -11,7 +11,7 @@ const Login = () => {
         //evt.preventDefault();
         const formData = new FormData(formRef.current);
         const values = Object.fromEntries(formData);
-        fetch('http://localhost:3030/login',{
+        fetch('https://apimercurio.herokuapp.com/login',{
             method:"POST",
             headers:{
                 "Accept":"application/json",

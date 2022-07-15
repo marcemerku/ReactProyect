@@ -13,7 +13,7 @@ const Edit = () => {
     const [filter, setFilter] = useState(""); //datos filtrado de los post
     const formRef = React.useRef();
     useEffect(() => {
-    fetch('http://localhost:3030/')
+    fetch('https://apimercurio.herokuapp.com/')
       .then((res) => res.json())
       .then((data) => setData(data))
   }, []);

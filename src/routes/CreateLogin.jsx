@@ -14,7 +14,7 @@ const CreateLogin = () => {
         const formData = new FormData(formRef.current);
         const values = Object.fromEntries(formData);
         console.log(values, formData)
-        fetch('http://localhost:3030/login/register',{
+        fetch('https://apimercurio.herokuapp.com/login/register',{
             method:"POST",
             headers:{
                 "Accept":"application/json",

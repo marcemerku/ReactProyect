@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState([]); //datos de los post
   const [filter, setFilter] = useState(""); //datos filtrado de los post
   useEffect(() => {
-    fetch('http://localhost:3030/')
+    fetch('https://apimercurio.herokuapp.com/')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

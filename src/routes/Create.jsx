@@ -11,7 +11,7 @@ const Create = () => {
         const formData = new FormData(formRef.current);
         const values = Object.fromEntries(formData);
         
-        fetch('http://localhost:3030/create',{
+        fetch('https://apimercurio.herokuapp.com/create',{
             method:"POST",
             headers:{
                 "Accept":"application/json",
