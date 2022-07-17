@@ -3,30 +3,23 @@ import React from 'react'
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 
-
-
-
-
 const CreateLogin = () => {
     const formRef = React.useRef();
     function handleSubmit(evt) {
         evt.preventDefault();
         const formData = new FormData(formRef.current);
-        const values = Object.fromEntries(formData);
-        console.log(values, formData)
         fetch('https://apimercurio.herokuapp.com/login/register',{
             method:"POST",
             headers:{
                 "Accept":"application/json",
-                "Content-Type":"application/json"
             },
-            body: values
+            body: formData
         })
             .then(res => res.json())
             .then(json => {
                 alert("Cuenta Creada")
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err))  
     }
     return (
         <>
