@@ -20,8 +20,15 @@ const Create = () => {
             },
             body: JSON.stringify(values)
         })
-            .then(res => res.json())
-            .catch(err => console.log("soy yo"))
+            .then(res => {if(res.status === 201) {
+                alert("Publicado con exito")
+                return res.json();
+              }
+              if(res.status === 403) {
+                alert("No estas logeado o expiró")
+                return res.json();
+              }})
+            .catch(err => console.log(err))
     }
     return (
         <>

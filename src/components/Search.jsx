@@ -9,7 +9,7 @@ const Search = () => {
         <>
              <div className="formulario">
                     <form className="form">
-                        <label for="search">
+                        <label for="search" className="label">
                             <input className="input" type="text" onChange={(e) => setFilter(e.target.value)} required="" placeholder="Search" id="search" />
                             <div className="fancy-bg"></div>
                             <div className="search">

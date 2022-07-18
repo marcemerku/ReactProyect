@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import postContext from '../postcontext';
 import Nav from '../components/Nav';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 import Options from '../components/Opcions';
 
 const DeleteLogin = () => {
@@ -21,7 +21,7 @@ const DeleteLogin = () => {
     let values = Object.fromEntries(formData);
     const id= values.id
     
-    /*${parseInt(values.id)}*/
+    
     
     fetch(`https://apimercurio.herokuapp.com/login/${id}`,{
         method:"DELETE",
@@ -49,7 +49,13 @@ const DeleteLogin = () => {
                         <input type="submit"  value="Eliminar"/>
                 </div>
             </form>
-            <Footer />
+            {data.map((post) => (
+                <div key={post.id} className='conteinerCard'>
+                    <div className='boxlist'><b>ID:</b>  {post.id}</div>
+                    <div className='boxlist'><b>Nick</b>  {post.nick}</div>
+                    <div className='boxlist'><b>Email:</b> {post.email}</div>
+                </div> 
+            ))} 
             </postContext.Provider>
         </>
         

@@ -15,8 +15,11 @@ const CreateLogin = () => {
             },
             body: formData
         })
-            .then(res => res.json())
+            .then(res =>{
+                res.json()
+                console.log(res.status)} )
             .then(json => {
+                
                 alert("Cuenta Creada")
             })
             .catch(err => console.log(err))  
@@ -28,16 +31,16 @@ const CreateLogin = () => {
             <div className="formularios">
             <h2>Create Login</h2>
             <form onSubmit={handleSubmit} ref={formRef}>
-                <label htmlFor="nick">Nick</label>
-                <input id="nick" name="nick" type="text" />
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" />
-                <label htmlFor="password">Password</label>
-                <input id="password" name="password" type="password" />
-                <label htmlFor="level_usu">Nivel de usuario</label>
-                <input id="level_usu" name="level_usu" type="text" />
-                <label htmlFor="file">Imagen de tu cuenta</label>
-                <input id="file" name="file" type="file" />
+                <label for="nick">Nick</label>
+                <input id="nick" name="nick" type="text" required/>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required/>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" required/>
+                <label for="level_usu">Nivel de usuario</label>
+                <input id="level_usu" name="level_usu" type="text" required/>
+                <label for="file">Imagen de tu cuenta</label>
+                <input id="file" name="file" type="file" required/>
                 <button type="submit">Crear cuenta</button>
             </form>
             </div>

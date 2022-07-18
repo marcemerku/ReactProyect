@@ -9,7 +9,7 @@ const Options = () => {
     return (
         <>
         { 
-        data.map((post) =>(<option value={post.id} key={post.id}>{post.id}</option>  )
+        data.map((post) =>(<option value={post.id} key={post.id}>{post.id} </option>  )
             
           )}
               

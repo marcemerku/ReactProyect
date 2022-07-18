@@ -7,8 +7,8 @@ import Header from '../components/Header';
 
 const Login = () => {
     const formRef = React.useRef();
-    function handleSubmit(evt) {
-        //evt.preventDefault();
+    function  handleSubmit (evt) {
+        evt.preventDefault();
         const formData = new FormData(formRef.current);
         const values = Object.fromEntries(formData);
         fetch('https://apimercurio.herokuapp.com/login',{
@@ -19,29 +19,46 @@ const Login = () => {
             },
             body: JSON.stringify(values)
         })
-            .then(res => res.json())
-            .then(json => {
+            .then(res =>  {
+                if(res.status === 200) {
                 alert("Estas Logeado")
-                localStorage.setItem("Token_info", json.Token_info.token)
-            })
+                return res.json();
+              }
+              if(res.status === 401) {
+                alert("Contraseña incorrecta")
+                return res.json();
+              }
+              if(res.status === 404) {
+                alert("Usuario incorrecto")
+                return res.json();
+              }
+                })       
+            .then(json => localStorage.setItem("Token_info", json.Token_info.token)) 
             .catch(err => console.log(err))
     }
+    
+    
     return (
         <>
             <Header />
             <Nav />
             <div className="formularios">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit} ref={formRef}>
-                <label htmlFor="email">Email</label>
+            <form onSubmit={ handleSubmit} ref={formRef}>
+                <label for="email">Email</label>
                 <input id="email" name="email" type="email" />
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input id="password" name="password" type="password" />
                 <button type="submit">Sign Up</button>
             </form>
             </div>
-            <Link to="/Login/createLogin">createLogin</Link> |{" "}
-            <Link to="/Login/deleteLogin">deleteLogin</Link>
+            <div className='botoneslogin'>
+                <div className='botonslog'>
+                    <Link to="/Login/createLogin" className='botonlog'>createLogin</Link>
+                    <Link to="/Login/deleteLogin" className='botonlog'>deleteLogin</Link>
+                </div>
+            </div>
+            
             
             
             

@@ -26,60 +26,10 @@ header{
 }
 
 
-/* From uiverse.io */
-.login {
-  --color: #EE81B3;
-  font-family: inherit;
-  display: inline-block;
-  width: 8em;
-  height: 2.6em;
-  line-height: 2.5em;
-  margin: 20px;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color .5s;
-  z-index: 1;
-  font-size: 17px;
-  border-radius: 6px;
-  font-weight: 500;
-  color: var(--color);
- }
- 
- .login:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
- }
- 
- .login:hover {
-  color: #fff;
- }
- 
- .login:before {
-  top: 100%;
-  left: 100%;
-  transition: all .7s;
- }
-
- .login:hover:before {
-  top: -30px;
-  left: -30px;
- }
- 
- .login:active:before {
-  background: #EE81B3;
-  transition: background 0s
- }
-/* From uiverse.io by @satyamchaudharydev */
 
 /* this is a recreation of twitter search in css */
 .form {
-  --input-text-color: #fff;
+  --input-text-color: black;
   --input-bg-color: #283542;
   --focus-input-bg-color: transparent;
   --text-color: #949faa;
@@ -111,7 +61,7 @@ header{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 /* label styling */
-label {
+.label {
   width: 100%;
   padding: 0.8em;
   height: 40px;
@@ -179,10 +129,10 @@ svg {
   visibility: visible;
 }
 /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
   -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
   -webkit-transition-delay: 9999s;
 }
@@ -242,6 +192,26 @@ textarea{
 select{
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.botoneslogin{
+  width: 100%;
+  display: flex;
+}
+.botonlog{
+  color: #283542;
+  cursor: pointer;  
+  text-decoration: none;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 10px 7px 10px 7px;
+  background-color:#EE81B3 ;
+  border-radius: 5px;
+}
+.botonslog{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
